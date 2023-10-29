@@ -7,13 +7,13 @@ import static ihmsimple.services.ServiceDevine.NOMBRE_INVALIDE;
 import java.awt.Color;
 
 /**
- * Classe représentant l'ihm de l'application MVC "IhmSimple" du module 404.
+ * Classe représentant l'ihm de l'application MVC "IhmSimple".
  *
  * @author <a href="mailto:friedlip@edufr.ch">Paul Friedli</a>
- * @since 24.04.2017
+ * @since 29.10.2023
  * @version 1.0.0
  */
-public class Ihm extends javax.swing.JFrame {
+public class View extends javax.swing.JFrame {
 
     /**
      * ATTENTION : ces attributs de l'ihm ne doivent pas être modifiés car
@@ -36,7 +36,7 @@ public class Ihm extends javax.swing.JFrame {
     /**
      * Constructeur de l'ihm.
      */
-    public Ihm() {
+    public View() {
         this.refCtrl = null;
     }
 
@@ -99,7 +99,7 @@ public class Ihm extends javax.swing.JFrame {
     }
 
     /**
-     * ATTENTION : cette méthode est appelée afin d'initialiser les composants de l'ihm et ne doit pas être modifiée car
+     * ATTENTION : cette méthode est appelée afin d'initialiser les composants de la vue et ne doit pas être modifiée car
      * son contenu est automatiquement modifié et regénéré par l'éditeur.
      */
     @SuppressWarnings( "unchecked" )
@@ -122,7 +122,7 @@ public class Ihm extends javax.swing.JFrame {
             }
         });
 
-        jLabelLogo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ihmsimple/ihm/pingouin.png"))); // NOI18N
+        jLabelLogo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ihmsimple/views/pingouin.png"))); // NOI18N
 
         jLabelProposition.setText("Votre proposition : ");
 

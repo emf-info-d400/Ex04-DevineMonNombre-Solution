@@ -56,7 +56,7 @@ class Controller {
     -ServiceDevine refServiceDevine
     +Controller()
     +actionDemarrerNouveauJeu() void
-    +actionDevinerJeu() void
+    +actionDeviner() void
     +start() void
     +setRefView(View view) void
     +setRefServiceDevine(ServiceDevine service) void
@@ -71,7 +71,7 @@ class ServiceDevine {
     -Controller refCtrl
     +ServiceDevine()
     +penserAUnNombre() int
-    +setRefCtrl(Controller ctrl)
+    +setRefCtrl(Controller ctrl) void
     +getRefCtrl() Controller
 }
 note for ServiceDevine "MAX_NOMBRE = 100\nMIN_NOMBRE = 1\nNOMBRE_INVALIDE = -1"
