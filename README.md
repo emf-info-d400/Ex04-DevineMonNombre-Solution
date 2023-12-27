@@ -1,5 +1,5 @@
 # Exercice 04 : Devine mon nombre
-## durée : 240'
+## Durée : 240'
 ## Objectifs visés :
 Maitriser les diagrammes de séquence ; Maitriser les diagrammes de classes ; Savoir se référer à la Javadoc ; Maîtrise de MVC avec Ihm simple fournie
 
@@ -85,7 +85,7 @@ Controller "1" o--> View : refView
 Voici la structure des packages pour chaque classe du projet
 ```mermaid
 classDiagram
-namespace ihmsimple {
+namespace ex04_devinemonnombre {
     class app
     class views
     class ctrl
@@ -111,26 +111,27 @@ namespace services {
 Voici le diagramme de séquence de la méthode de la méthode `main()` de la classe `IhmSimple` du package `app` :
 ```mermaid
 sequenceDiagram
-    participant main
-    main->>Controller: new Controller()
-    Controller-->>main: refCtrl
-    main->>ServiceDevine: new ServiceDevine()
-    ServiceDevine-->>main: refServiceDevine
-    main->>Controller: setRefServiceDevine(refServiceDevine)
-    main->>View: new View()
-    View-->>main: refView
-    main->>Controller: setRefView(refView)
-    main->>View: setRefCtrl(refCtrl)
-    main->>ServiceDevine: setRefCtrl(refctrl)
-    main->>Controller: start()
+    participant app.IhmSimple.main()
+    create participant refCtrl
+    app.IhmSimple.main()->>refCtrl: new Controller()
+    create participant refServiceDevine
+    app.IhmSimple.main()->>refServiceDevine: new ServiceDevine()
+    app.IhmSimple.main()->>refCtrl: setRefServiceDevine(refServiceDevine)
+    create participant refView
+    app.IhmSimple.main()->>refView: new View()
+    app.IhmSimple.main()->>refCtrl: setRefView(refView)
+    app.IhmSimple.main()->>refView: setRefCtrl(refCtrl)
+    app.IhmSimple.main()->>refServiceDevine: setRefCtrl(refctrl)
+    app.IhmSimple.main()->>refCtrl: start()
 ```
+
 ### ihmsimple.ctrl.Controller.start()
 Voici le diagramme de séquence de la méthode de la méthode `start()` de la classe `Controller` du package `ctrl` :
 ```mermaid
 sequenceDiagram
     participant Controller.start()
     Controller.start()->>View refView: ihmStart()
-    Controller.start()->>View refView: afficherStatus("Jeu teriminé !", Color.LIGHT_GRAY)
+    Controller.start()->>View refView: afficherStatus("Jeu terminé !", Color.LIGHT_GRAY)
 ```
 ### ihmsimple.ctrl.Controller.actionDemarrerNouveauJeu()
 Voici le diagramme de séquence de la méthode de la méthode `actionDemarrerNouveauJeu()` de la classe `Controller` du package `ctrl` :
